@@ -185,6 +185,76 @@ ul { list-style: none; }
 .timeline-content h3 { color: var(--primary); margin-bottom: 6px; }
 .timeline-content .year { color: var(--gold); font-weight: 700; font-size: 0.9rem; }
 
+/* ===== MILESTONES SECTION BACKGROUND & GLASSMORPHISM ===== */
+.milestones-section {
+  position: relative;
+  background-image: url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 1;
+  padding: 100px 0;
+}
+.milestones-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(26,10,10,0.85) 0%, rgba(93,26,26,0.92) 50%, rgba(26,10,10,0.85) 100%);
+  z-index: -1;
+}
+.milestones-section .container {
+  position: relative;
+  z-index: 2;
+}
+.milestones-section h2 {
+  color: var(--white);
+}
+.milestones-section .timeline::before {
+  background: linear-gradient(to bottom, var(--primary) 0%, var(--gold) 50%, var(--primary) 100%);
+}
+.milestones-section .timeline-dot {
+  background: var(--gold);
+  border-color: var(--white);
+  box-shadow: 0 0 12px var(--gold-light);
+  animation: pulse-glow 2s infinite;
+}
+.milestones-section .timeline-content {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.9);
+  transition: var(--transition);
+}
+.milestones-section .timeline-content:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--gold);
+  box-shadow: 0 12px 40px 0 rgba(197,150,30,0.25);
+}
+.milestones-section .timeline-content h3 {
+  color: var(--gold);
+}
+.milestones-section .timeline-content .year {
+  color: var(--primary-light);
+}
+.milestones-section .timeline-content p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(197, 150, 30, 0.8);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(197, 150, 30, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(197, 150, 30, 0);
+  }
+}
+
 /* ===== PRODUCT PAGE ===== */
 .product-detail { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 36px; }
 .product-card { background: white; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); border: 1px solid var(--gray-200); transition: var(--transition); }
